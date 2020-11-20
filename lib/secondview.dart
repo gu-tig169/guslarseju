@@ -45,6 +45,7 @@ class SecondViewState extends State<SecondView> {
             Container(height: 39,),
             Container(margin: EdgeInsets.only(left: 30, right: 30),
             child: TextFormField(
+              controller: textEditingController,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'What are you going to do?'
@@ -55,7 +56,7 @@ class SecondViewState extends State<SecondView> {
             Row(mainAxisAlignment: MainAxisAlignment.center, 
             children: [
               FlatButton(
-                child: Text('Add', style: TextStyle(color: Colors.white)),
+                child: Text('Add', style: TextStyle(color: Colors.black)),
                 onPressed: () {
                   Navigator.pop(
                     context,

@@ -10,7 +10,7 @@ class TodoTask {
 }
 class MyState extends ChangeNotifier {
   List<TodoTask> _list = [
-    TodoTask(message: 'hej')
+    TodoTask(message: '')
   ];
 
   List<TodoTask> get list => _list;
