@@ -19,9 +19,17 @@ class TaskList extends StatelessWidget {
   Widget _taskItem(context, TodoTask memo) {
     return ListTile(
               leading: Checkbox(
-                value: false, onChanged: (bool val){}),
+                value: memo.done, 
+                onChanged: (bool val){
+                  var state = Provider.of<MyState>(context, listen: false);
+                  state.boxChecked(memo);
+                }),
               
-              title: Text(memo.message),
+              title: Text(memo.message,
+              style: TextStyle(
+                decoration: (memo.done ? TextDecoration.lineThrough : TextDecoration.none)
+              )
+              ),
               trailing: IconButton(
                 icon: Icon(Icons.clear),
                 onPressed: () {

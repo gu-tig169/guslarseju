@@ -3,9 +3,17 @@ import 'package:flutter/material.dart';
 
 class TodoTask {
   String message;
+  bool done;
 
 
-  TodoTask({this.message});
+  TodoTask({this.message,this.done = false});
+  void inspect(){
+    if (this.done == false) {
+      this.done = true;
+    } else {
+      this.done = false;
+    }
+  }
 
 }
 class MyState extends ChangeNotifier {
@@ -23,5 +31,10 @@ class MyState extends ChangeNotifier {
     _list.remove(memo);
     notifyListeners();
     
+  }
+  void boxChecked(TodoTask memo) {
+    var idx = list.indexOf(memo);
+    _list[idx].inspect();
+    notifyListeners();
   }
 }
