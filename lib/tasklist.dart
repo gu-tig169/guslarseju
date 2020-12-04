@@ -22,7 +22,7 @@ class TaskList extends StatelessWidget {
                 value: memo.done, 
                 onChanged: (bool val){
                   var state = Provider.of<MyState>(context, listen: false);
-                  state.boxChecked(memo);
+                  state.boxChecked(memo, val);
                 }),
               
               title: Text(memo.message,
