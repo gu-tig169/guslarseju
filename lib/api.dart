@@ -4,7 +4,7 @@ import 'model.dart';
 import 'package:http/http.dart' as http;
 
 const API_URL = 'https://todoapp-api-vldfm.ondigitalocean.app';
-const API_KEY = '24007f11-6536-4df7-93ce-94f7d5ecf872';
+const API_KEY = '577c7513-9612-4d10-a5c0-5e19a4f8a605';
 
 class Api {
   static Future addTodo(TodoTask memo) async {
@@ -48,3 +48,4 @@ class Api {
     }).toList();
   }
 }
+
