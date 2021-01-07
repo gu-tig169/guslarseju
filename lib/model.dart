@@ -38,16 +38,18 @@ class MyState extends ChangeNotifier {
     _list.add(memo);
     await Api.addTodo(memo);
     print(list);
-    notifyListeners();
+    getList();
   }
   void removeTask(TodoTask memo) async{
-    await Api.deleteTodos(memo.id);
+    
+    _list = await Api.deleteTodos(memo.id);
     await getList();
+    
     
   }
   void boxChecked(TodoTask memo, bool done) async{
     memo.done = done;
-    await Api.updateTodo(memo, memo.id);
+    _list = await Api.updateTodo(memo, memo.id);
     await getList();
 
   }
